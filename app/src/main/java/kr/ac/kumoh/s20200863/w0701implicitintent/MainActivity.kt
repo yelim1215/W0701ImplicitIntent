@@ -12,8 +12,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.btnHomepage.setOnClickListener {
             val uri = Uri.parse("http://bwoh.github.io")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
+
+        binding.btnMap.setOnClickListener {
+            val uri = Uri.parse("geo:0, 0?z=17&q=경북 구미시 대학로 23-7")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
+
+        binding.btnMap.setOnClickListener {
+            val uri = Uri.parse("sms:010-3047-5988")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
